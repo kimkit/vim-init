@@ -5,6 +5,7 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
+set backspace=2
 set autoindent
 set cindent
 set tabstop=4
