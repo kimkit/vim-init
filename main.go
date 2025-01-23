@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/fs"
 	"io/ioutil"
 	"log"
 	"os"
@@ -64,7 +65,12 @@ func main() {
 		if err != nil {
 			log.Fatalf("ERROR packr.Box.Find: %v (%s)", err, file)
 		}
-		if err := ioutil.WriteFile(destFile, fileBytes, 0644); err != nil {
+		var perm fs.FileMode = 0644
+		prefixBin := fmt.Sprintf("%s%c", "vim", os.PathSeparator)
+		if strings.HasPrefix(file, prefixBin) {
+			perm = 0755
+		}
+		if err := ioutil.WriteFile(destFile, fileBytes, perm); err != nil {
 			log.Fatalf("ERROR ioutil.WriteFile: %v (%s)", err, destFile)
 		}
 	}

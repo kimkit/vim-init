@@ -51,6 +51,6 @@ let g:tagbar_type_go = {
         \ 'ctype' : 't',
         \ 'ntype' : 'n'
     \ },
-    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsbin'  : '~/.vim/bin/gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
