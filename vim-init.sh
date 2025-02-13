@@ -2,7 +2,7 @@
 
 set -x
 
-version=${VERSION:-v0.1.2}
+version=${VERSION:-v0.1.3}
 downloadUrl=https://github.com/kimkit/vim-init/releases/download/$version/vim-init.linux
 binaryFile=/tmp/vim-init
 
